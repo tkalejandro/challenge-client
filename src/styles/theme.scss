@@ -1,0 +1,20 @@
+
+//Font Colors
+$darkColor: #293241;
+$whiteColor: white;
+
+//Background Colors
+$error: #ee6c4d;
+$primaryBg: #3d5a80;
+$secondaryBg: #98c1d9;
+$lightBg: #e0fbfc;
+
+
+//Mixin  
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+  

@@ -1,0 +1,8 @@
+@import "../styles/theme.scss";
+
+.layout_background {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color:$lightBg;
+    @include flex (row, center, center)
+}
