@@ -1,0 +1,49 @@
+@import "../../styles/theme.scss";
+
+.header {
+    *{
+        
+        color: $whiteColor;
+        div{
+            
+            &:hover {
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+    position: fixed;
+    background-color: $primaryBg;
+    width: 100%;
+    max-height: 50px;
+    @include flex(row, space-between, center);
+    .logo{
+        padding: 10%;
+    }
+    nav {
+        padding: 10%;
+        position: relative;
+        .menu_close {
+            display: none
+        }
+        .menu_open {
+            @include flex(column, center, center);
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background-color: $primaryBg;
+            //background-color: yellow;
+            .x{
+                position: absolute;
+                font-size: 40px;
+                padding: 5%;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    
+}

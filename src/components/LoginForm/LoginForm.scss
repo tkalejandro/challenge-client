@@ -1,0 +1,20 @@
+@import "../../styles/theme.scss";
+
+form {
+    @include flex(column, center, center);
+    .error{
+        color: $error;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    span {
+        margin-top: 20px;
+        font-size: 12px;
+        color: $darkColor;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}
