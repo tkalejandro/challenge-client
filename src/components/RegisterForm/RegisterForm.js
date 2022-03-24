@@ -1,11 +1,15 @@
 import React from "react"
 import { Formik, Form, Field, } from "formik"
-
+import { useDispatch } from "react-redux"
 import * as yup from "yup"
 import { Link } from "react-router-dom"
+import * as userAction from "../../redux/actions/userAction"
+import { useNavigate } from "react-router";
 
 //? Note:  Im able to do this as well without Formik!  But i wanted to try this in React, since i discover this in React Native.
 const RegisterForm = ({ toggle }) => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
     const loginSchema = yup.object({
         fullName: yup.string().required().min(2).max(50),
         email: yup.string().email().required(),
@@ -20,9 +24,11 @@ const RegisterForm = ({ toggle }) => {
                     password: ""
                 }
             }
-            onSubmit={values => {
-                alert(JSON.stringify(values, null, 2));
-            }}
+            onSubmit={values => dispatch(userAction.registerUser(values))
+            .then((result) => {
+                navigate(`../user/${result.id}`)
+
+            } )}
             validationSchema={loginSchema}
         >
             {({ errors, touched }) => (

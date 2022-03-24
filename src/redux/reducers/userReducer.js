@@ -1,4 +1,4 @@
-import { DELETE_USER, LOGIN_USER, REGISTER_USER } from "../actions/userAction"
+import { DELETE_USER, LOAD_PROFILE, LOGIN_USER, REGISTER_USER } from "../actions/userAction"
 
 
 const initialState = {
@@ -10,6 +10,12 @@ const useReducer = (state = initialState, action) => {
         case LOGIN_USER:
             return {
                 ...state,
+                currentUser: action.payload
+            }
+        case LOAD_PROFILE:
+            return {
+                ...state,
+                currentUser: action.payload
             }
         case REGISTER_USER:
             return {
