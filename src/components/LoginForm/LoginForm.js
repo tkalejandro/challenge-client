@@ -1,24 +1,14 @@
 import React from "react"
 import { Formik, Form, Field, } from "formik"
-import "./LoginForm.scss"
+
 import * as yup from "yup"
 
+//? Note:  Im able to do this as well without Formik!  But i wanted to try this in React, since i discover this in React Native.
 const LoginForm = ({toggle}) => {
     const loginSchema = yup.object({
         email: yup.string().email().required(),
         password: yup.string().required().min(8)
     })
-    // const formik = useFormik({
-    //     initialValues: {
-    //       email: "",
-    //       password: ""
-    //     },
-    //     onSubmit: values => {
-    //       alert(JSON.stringify(values, null, 2));
-    //     },
-    //     validationSchema:loginSchema
-    //   });
-
       return(
         <Formik
         initialValues={

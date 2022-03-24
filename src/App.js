@@ -7,11 +7,14 @@ import Register from './pages/Register';
 import UserDashboard from './pages/UserDashboard';
 import NotFound from "./pages/NotFound"
 
+import { Provider } from "react-redux";
+import store from "./redux/store"
+
 
 const App = () => {
   return (
 
-
+    <Provider store={store}>
     <Router>
       <LayOut>
         <Routes>
@@ -22,6 +25,7 @@ const App = () => {
         </Routes>
       </LayOut>
     </Router>
+    </Provider>
 
 
 
