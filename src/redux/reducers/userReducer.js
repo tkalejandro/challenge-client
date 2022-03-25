@@ -2,7 +2,10 @@ import { DELETE_USER, LOAD_PROFILE, LOGIN_USER, REGISTER_USER } from "../actions
 
 
 const initialState = {
-    currentUser: {}
+    currentUser: {},
+    aString: "",
+    aBoolean: true,
+    anArray: ["example1"]
 }
 
 const useReducer = (state = initialState, action) => {
@@ -15,11 +18,17 @@ const useReducer = (state = initialState, action) => {
         case LOAD_PROFILE:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload,
+                anArray: [
+                    ...state.anArray,
+                    "example2"
+                ]
             }
         case REGISTER_USER:
             return {
                 ...state,
+                aString: "hello",
+                currentUser: action.payload
             }
         case DELETE_USER:
             return {
