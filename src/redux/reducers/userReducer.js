@@ -16,6 +16,7 @@ const useReducer = (state = initialState, action) => {
                 currentUser: action.payload
             }
         case LOAD_PROFILE:
+            console.log("Loading is happening")
             return {
                 ...state,
                 currentUser: action.payload,
@@ -32,7 +33,8 @@ const useReducer = (state = initialState, action) => {
             }
         case DELETE_USER:
             return {
-                ...state
+                ...state,
+                currentUser: {}
             }
         default:
             return state

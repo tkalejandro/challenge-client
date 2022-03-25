@@ -15,7 +15,7 @@ const UserDashboard = () => {
         dispatch(userAction.loadProfile(id))
     }, [])
 
-    const {currentUser} = useSelector(state => state.user)
+    const {currentUser, anArray} = useSelector(state => state.user)
     
     console.log("current user", currentUser)
     
@@ -25,6 +25,17 @@ const UserDashboard = () => {
                 <h1>Hello!  {currentUser.fullName}</h1>
                 <p>This is your email: {currentUser.email}</p>
                 <p>The secret of today is: {secrets[_randomNumber(secrets)]}</p>
+                <h2>Lets print the array</h2>
+                <ul>
+                {
+                    anArray.map((item, index) => {
+                        return (
+                            <li key={index}>{item}</li>
+                           
+                        )
+                    })
+                }
+                </ul>
             </section>
             <section>
 

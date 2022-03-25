@@ -49,7 +49,7 @@ export const deleteUser = (userId) => {
         //? Something
         
         dispatch({
-            type: LOGIN_USER,
+            type: DELETE_USER,
             payload: ""
         })
     }
@@ -62,7 +62,7 @@ export const loadProfile = (userId) => {
         const result = await fetch(`${BASE_URL}/api/users/${userId}`)
         const resultData = await result.json()
         dispatch({
-            type: LOGIN_USER,
+            type: LOAD_PROFILE,
             payload: resultData
         })
     }
